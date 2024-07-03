@@ -1,0 +1,23 @@
+spring:
+    application:
+        name: schools
+        import: optional:configserver:http://localhost:8888
+    datasource:
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://localhost:1433;databaseName=school;encrypt=true;trustServerCertificate=false
+        username: heshan@azuresqlserverlk
+        password: 123456789hH
+    jpa:
+            hibernate:
+                    ddl-auto: create
+            database-platform: org.hibernate.dialect.SQLServer2012Dialect
+
+application:
+    config:
+        students-url: http://localhost:8222/api/v1/students
+
+#logging:
+#    level:
+#        org.springframework: DEBUG
+#        org.hibernate: DEBUG
+#        com.microsoft.sqlserver: DEBUG
